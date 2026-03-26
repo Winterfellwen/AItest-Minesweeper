@@ -11,9 +11,6 @@ WORKDIR /app
 # Copy project
 COPY . .
 
-# List files for debugging
-RUN ls -la
-
 # Install system dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
         gcc \
@@ -24,7 +21,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Collect static files
-RUN python manage.py collectstatic --noinput
+RUN python minesweeper_django/manage.py collectstatic --noinput
 
 # Expose port
 EXPOSE 8000
