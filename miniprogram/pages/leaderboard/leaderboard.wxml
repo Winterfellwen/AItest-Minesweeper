@@ -1,0 +1,21 @@
+<view class="container">
+  <view class="tab-bar">
+    <view class="tab {{activeTab === 'easy' ? 'active' : ''}}" bind:tap="switchTab" data-tab="easy">初级</view>
+    <view class="tab {{activeTab === 'medium' ? 'active' : ''}}" bind:tap="switchTab" data-tab="medium">中级</view>
+    <view class="tab {{activeTab === 'hard' ? 'active' : ''}}" bind:tap="switchTab" data-tab="hard">高级</view>
+  </view>
+
+  <view wx:if="{{loading}}" class="loading">加载中...</view>
+
+  <view wx:else class="list">
+    <view wx:if="{{scores.length === 0}}" class="empty">暂无记录</view>
+    <view class="score-item" wx:for="{{scores}}" wx:key="index">
+      <view class="rank {{item.rank <= 3 ? 'top-rank' : ''}}">#{{item.rank}}</view>
+      <view class="info">
+        <view class="nickname">{{item.user_nickname}}</view>
+        <view class="time-label">用时 {{item.time_seconds}}s</view>
+      </view>
+      <view class="score-value">{{item.score}}</view>
+    </view>
+  </view>
+</view>

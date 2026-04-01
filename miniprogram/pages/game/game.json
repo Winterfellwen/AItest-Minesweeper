@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "扫雷",
+  "usingComponents": {
+    "game-board": "../../components/game-board/game-board",
+    "fireworks": "../../components/fireworks/fireworks"
+  }
+}

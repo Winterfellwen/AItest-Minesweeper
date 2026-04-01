@@ -1,0 +1,45 @@
+<view class="game-container">
+  <view class="game-header">
+    <view class="stat-box">
+      <view class="stat-label">剩余雷</view>
+      <view class="stat-value">{{remainingMines}}</view>
+    </view>
+    <view class="restart-btn" bind:tap="restartGame">重新开始</view>
+    <view class="stat-box">
+      <view class="stat-label">时间</view>
+      <view class="stat-value">{{timeDisplay}}</view>
+    </view>
+  </view>
+
+  <view class="board-wrapper">
+    <game-board
+      wx:if="{{boardReady}}"
+      board="{{board}}"
+      rows="{{rows}}"
+      cols="{{cols}}"
+      gameOver="{{isGameOver}}"
+      bind:cell="onCellTap"
+      bind:celllong="onCellLongPress"
+    />
+  </view>
+
+  <fireworks id="fireworks" visible="{{showFireworks}}" />
+
+  <cover-view class="dialog-mask" wx:if="{{showDialog}}">
+    <cover-view class="dialog">
+      <cover-view class="dialog-title" wx:if="{{isWin}}">恭喜过关！</cover-view>
+      <cover-view class="dialog-title" wx:else>踩雷了！</cover-view>
+      <cover-view class="dialog-info" wx:if="{{isWin}}">
+        <cover-view>用时: {{timeDisplay}}</cover-view>
+        <cover-view>得分: {{currentScore}}</cover-view>
+      </cover-view>
+      <cover-view class="dialog-actions">
+        <cover-view class="dialog-btn" bind:tap="restartGame">再来一局</cover-view>
+        <cover-view class="dialog-btn secondary" wx:if="{{isWin}}" bind:tap="goLeaderboard">
+          查看排行
+        </cover-view>
+        <cover-view class="dialog-btn secondary" bind:tap="closeDialog">关闭</cover-view>
+      </cover-view>
+    </cover-view>
+  </cover-view>
+</view>

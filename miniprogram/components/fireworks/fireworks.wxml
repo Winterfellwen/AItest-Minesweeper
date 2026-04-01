@@ -1,0 +1,3 @@
+<view class="fireworks-overlay" wx:if="{{visible}}">
+  <canvas type="2d" id="fireworksCanvas" class="fireworks-canvas" />
+</view>

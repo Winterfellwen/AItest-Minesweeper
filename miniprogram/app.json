@@ -1,0 +1,25 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/game/game",
+    "pages/leaderboard/leaderboard",
+    "pages/profile/profile"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1976D2",
+    "navigationBarTitleText": "扫雷",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#90A4AE",
+    "selectedColor": "#1976D2",
+    "borderStyle": "white",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      { "pagePath": "pages/index/index", "text": "首页" },
+      { "pagePath": "pages/leaderboard/leaderboard", "text": "排行榜" },
+      { "pagePath": "pages/profile/profile", "text": "我的" }
+    ]
+  }
+}

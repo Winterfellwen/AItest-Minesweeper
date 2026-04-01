@@ -1,0 +1,7 @@
+<view class="container">
+  <view class="profile-card">
+    <image class="avatar" src="{{avatar}}" mode="aspectFill" />
+    <view class="nickname">{{nickname}}</view>
+    <view class="desc">登录即可同步成绩到排行榜</view>
+  </view>
+</view>

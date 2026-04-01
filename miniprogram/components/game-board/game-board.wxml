@@ -1,0 +1,7 @@
+<canvas type="2d"
+  id="gameBoard"
+  class="board-canvas"
+  style="width:{{canvasWidth}}px; height:{{canvasHeight}}px;"
+  bindtouchstart="onTouchStart"
+  bindtouchend="onTouchEnd"
+/>
