@@ -33,7 +33,7 @@ python manage.py runserver
 ## 前端开发
 
 1. 用微信开发者工具打开 `miniprogram/` 目录
-2. 修改 `utils/constants.ts` 中的 `API_BASE` 为后端地址
+2. 修改 `utils/constants.js` 中的 `API_BASE` 为后端地址
 3. 编译预览
 
 ## 后端API
